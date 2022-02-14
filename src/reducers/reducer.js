@@ -1,15 +1,15 @@
 const loginData = (state = null, action) => {
-  console.log({ action });
+  
   if (action.type === "SET_LOGIN_DATA") {
     return action.data;
   }
   return state;
 };
 
-const todoList = (state = null, action) => {
-  console.log({ action });
+const todoList = (state =[], action) => {
+
   if (action.type === "SET_TODO_DATA") {
-    return action.data;
+    return [...state, action.data];
   }
   return state;
 };

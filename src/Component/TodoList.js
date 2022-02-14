@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 
-const TodoList = () => {
-    return (
-        <div>
-            list
-        </div>
-    );
+const TodoInput = ({ todoData }) => {
+    console.log({todoData})
+  return todoData.length ? (
+    <div>
+      {todoData.map((todo, index) => {
+        <div key={todo.id}>
+          <div>{todo.text}</div>
+        </div>;
+      })}
+    </div>
+  ) : (
+    <div>test</div>
+  );
 };
 
-export default TodoList;
+const mapStateToProps = ({ loginData, todoList }) => ({
+  loginData,
+  todoList,
+});
+
+export default connect(mapStateToProps)(TodoInput);

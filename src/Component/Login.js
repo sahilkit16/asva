@@ -3,11 +3,12 @@ import { connect } from "react-redux";
 
 import { useNavigate } from "react-router-dom";
 const Login = (props) => {
+  console.log({ props });
   const navigate = useNavigate();
   const [userName, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const onChange = (e) => {
-    console.log(userName, password, e.target.name);
+    
     if (e.target.name === "userName") {
       setUsername(e.target.value);
     } else {
