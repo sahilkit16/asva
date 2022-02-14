@@ -7,11 +7,10 @@ class App extends Component {
     //   name: "Leizl",
     // };
     // this.props.setUser(user);
-    this.props.dispatch({ type: "SET_LOGIN_DATA", data: {name:"test"} });
+    this.props.dispatch({ type: "SET_LOGIN_DATA", data: { name: "test" } });
   };
 
   render() {
-    console.log(this.props.loginData);
     return (
       <div>
         <h1>Redux Testing</h1>
